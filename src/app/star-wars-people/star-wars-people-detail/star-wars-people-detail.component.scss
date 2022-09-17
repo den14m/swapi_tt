@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+
+.c-star-wars-people-detail {
+  padding: 20px;
+}
+
+.star-wars-people-detail__cards-wrap {
+  max-width: 500px;
+  .star-wars-people-detail__card {
+    margin-top: 20px;
+  }
+}

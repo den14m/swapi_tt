@@ -1,0 +1,53 @@
+<div class="c-star-wars-people-detail">
+  <button
+    mat-stroked-button
+    color="primary"
+    matTooltip="Back"
+    (click)="handleBack()"
+  >
+    <mat-icon>keyboard_arrow_left</mat-icon>
+    Back
+  </button>
+  <div class="star-wars-people-detail__cards-wrap">
+    <!-- todo: here should be id in condition or loading flag -->
+    <mat-card
+      class="star-wars-people-detail__card"
+      *ngIf="person?.url; else skeleton"
+    >
+      <mat-card-title-group>
+        <mat-card-title>Person</mat-card-title>
+        <mat-card-subtitle> Name: {{ person.name }} </mat-card-subtitle>
+      </mat-card-title-group>
+      <mat-card-content>
+        <div>Gender: {{ person.gender }}</div>
+        <div>Birth year: {{ person.birth_year }}</div>
+        <div>Skin color: {{ person.skin_color }}</div>
+        <div>Eye color: {{ person.eye_color }}</div>
+        <div>Eye color: {{ person.eye_color }}</div>
+        <div>Created: {{ person.created | date }}</div>
+      </mat-card-content>
+    </mat-card>
+    <!-- todo: here should be id in condition or loading flag -->
+    <mat-card
+      class="star-wars-people-detail__card"
+      *ngIf="planet?.url; else skeleton"
+    >
+      <mat-card-title-group>
+        <mat-card-title>Planet</mat-card-title>
+        <mat-card-subtitle>Name: {{ planet.name }}</mat-card-subtitle>
+      </mat-card-title-group>
+      <mat-card-content>
+        <div>Population: {{ planet.population }}</div>
+        <div>Climate: {{ planet.climate }}</div>
+        <div>Population: {{ planet.population }}</div>
+        <div>Diameter: {{ planet.diameter }}</div>
+        <div>Gravity: {{ planet.gravity }}</div>
+      </mat-card-content>
+    </mat-card>
+    <ng-template #skeleton>
+      <app-star-wars-people-detail-skeleton
+        class="star-wars-people-detail__card"
+      ></app-star-wars-people-detail-skeleton>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div
+  class="c-star-wars-people-list"
+  infinite-scroll
+  [infiniteScrollDistance]="1"
+  [infiniteScrollThrottle]="5"
+  (scrolled)="onScroll()"
+>
+  <ng-container *ngFor="let p of people">
+    <mat-card class="star-wars-people-list__card">
+      <mat-card-header>
+        <mat-card-title>{{ p.name }}</mat-card-title>
+        <mat-card-subtitle>{{ p.gender | uppercase }}</mat-card-subtitle>
+      </mat-card-header>
+      <button mat-button (click)="handleSeeDetails(p.url)">See details</button>
+    </mat-card>
+  </ng-container>
+</div>

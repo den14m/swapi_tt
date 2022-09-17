@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+.c-star-wars-people-list {
+  padding: 20px;
+}
+
+.star-wars-people-list__card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border: 1px solid #7a7a7a;
+}
